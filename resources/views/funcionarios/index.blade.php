@@ -144,7 +144,7 @@
             <tr>
                 <td>{{ $funcionario->nome }}</td>
                 <td>{{ $funcionario->email }}</td>
-                <td>{{ $funcionario->cpf }}</td>
+                <td>{{ $funcionario->cpf_formatado }}</td>
                 <td>{{ $funcionario->cargo }}</td>
                 <td>{{ $funcionario->dataAdmissao ? \Carbon\Carbon::parse($funcionario->dataAdmissao)->format('d/m/Y') : '' }}</td>
                 <td>R$ {{ number_format($funcionario->salario, 2, ',', '.') }}</td>
