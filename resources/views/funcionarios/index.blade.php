@@ -31,16 +31,15 @@
                 <td>{{ $funcionario->cargo }}</td>
                 <td>{{ $funcionario->dataAdmissao }}</td>
                 <td>R$ {{ number_format($funcionario->salario, 2, ',', '.') }}</td>
-                <td>
+                <td class="flex space-x-2">
                     <a href="{{ route('funcionarios.edit', $funcionario) }}" class="text-blue-500">Editar</a>
                     
-                    <button @click="if(confirm('Confirmar exclusão?')) $refs.form{{ $funcionario->id }}.submit();" class="text-red-500 ml-2">
-                        Excluir
-                    </button>
-
-                    <form x-ref="form{{ $funcionario->id }}" method="POST" action="{{ route('funcionarios.destroy', $funcionario) }}" class="hidden">
+                    <form method="POST" action="{{ route('funcionarios.destroy', $funcionario) }}" id="delete-form-{{ $funcionario->id }}">
                         @csrf
                         @method('DELETE')
+                        <button type="button" onclick="confirmDelete('{{ $funcionario->id }}')" class="text-red-500 ml-2">
+                            Excluir
+                        </button>
                     </form>
                 </td>
             </tr>
@@ -48,4 +47,12 @@
         </tbody>
     </table>
 </div>
+
+<script>
+function confirmDelete(id) {
+    if(confirm('Confirmar exclusão?')) {
+        document.getElementById('delete-form-'+id).submit();
+    }
+}
+</script>
 @endsection
