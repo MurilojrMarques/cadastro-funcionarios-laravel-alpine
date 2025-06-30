@@ -4,7 +4,7 @@
 ![Alpine.js](https://img.shields.io/badge/Alpine.js-8BC0D0?style=for-the-badge&logo=alpine.js&logoColor=black)
 ![MySQL](https://img.shields.io/badge/MySQL-005C84?style=for-the-badge&logo=mysql&logoColor=white)
 
-Sistema CRUD para gerenciamento de funcionários desenvolvido com Laravel 10 e Alpine.js.
+Sistema CRUD para gerenciamento de funcionários desenvolvido com Laravel e Alpine.js.
 
 ## 🚀 Como Executar o Projeto
 
